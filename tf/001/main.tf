@@ -7,7 +7,7 @@ provider "google" {
 }
 
 resource "google_compute_network" "objVpcNetwork" {
-  name = "vn_gccode"
+  name = "vn-gccode"
 }
 
 terraform {
