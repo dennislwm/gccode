@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = file("../config/sa-gccode-key.json")
+  credentials = file("../../config/sa-gccode-key.json")
 
   project = "gccode"
   region  = "us-central1"
@@ -14,6 +14,6 @@ terraform {
   backend "gcs" {
     bucket  = "bu-gccode-01"
     prefix  = "tf"
-    credentials = "../config/sa-gccode-key.json"
+    credentials = "../../config/sa-gccode-key.json"
   }
 }
