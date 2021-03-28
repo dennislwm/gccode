@@ -19,6 +19,7 @@ Docker starter project for Google Cloud ["GC"].
         - [Initializing Terraform](#initializing-terraform)
         - [Create a Terraform Plan](#create-a-terraform-plan)
         - [Execute a Terraform Plan](#execute-a-terraform-plan)
+        - [Destroy a Terraform Plan](#destroy-a-terraform-plan)
         - [Troubleshooting](#troubleshooting)
 
 <!-- /TOC -->
@@ -43,13 +44,15 @@ Docker starter project for Google Cloud ["GC"].
           +- 001/                     <-- Minimal Terraform project
              |- main.tf               <-- Main TF file (required)
           +- 002/                     <-- Compute instance with static IP project
+          +- 003/                     <-- Compute instance with HTTP, SSH project
+          +- 004/                     <-- Compute instance with startup script project
 
 ---
 ## Installation
 
 ### Terraform
 
-* [Download Terraform](https://www.terraform.io/downloads.html)
+* [Download Terraform 0.14.9](https://releases.hashicorp.com/terraform)
 
 Terraform is distributed as a single binary. Install Terraform (64-bit) by unzipping it and moving it to a directory included in your system's ```PATH```.
 
@@ -163,10 +166,24 @@ Type the following command in your terminal:
 
      $ terraform apply
 
-Before typing 'yes', ensure that ALL resources Terraform will create and **destroy** are correct.
+Before typing 'yes', ensure that ALL resources Terraform will create are correct.
+
+### Destroy a Terraform Plan
+
+This step destroys all resources within your Terraform environment.
+
+Type the following command in your terminal:
+
+     $ terraform destroy
+
+Before typing 'yes', ensure that ALL resources Terraform will **destroy** are correct.
 
 ---
 
 ### Troubleshooting
 
 * [google_compute_address](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_address)
+
+* [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu)
+
+* [Post-installation steps for Linux](https://docs.docker.com/engine/install/linux-postinstall)
