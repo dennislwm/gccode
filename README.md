@@ -27,18 +27,21 @@ Docker starter project for Google Cloud ["GC"].
 ---
 ## About gccode
 **gccode** was a personal project to:
-- automate SSH key generation and uploading to remote server
-- automate droplet creation in a remote server
-- automate package installation in a remote server
-- automate make swapfile in a remote server
-- automate docker-compose in a remote server
-- automate restore files to a remote server
-- automate backup files from a remote server
+- automate setting up remote state in cloud storage
+- automate SSH key generation and uploading to cloud server
+- automate vm creation in a cloud server
+- automate package installation in a cloud server
+- automate make swapfile in a cloud server
+- automate docker-compose in a cloud server
+- automate restore files to a cloud server
+- automate backup files from a cloud server
 
 ---
 ## Project Structure
      gccode/                          <-- Root of your project
        |- README.md                   <-- This README markdown file
+       +- bin/                        <-- Holds any common bash scripts
+          |- startup.sh               <-- Startup bash script used in Terraform projects
        +- config/                     <-- Holds any configuration files
        +- tf/                         <-- Terraform root folder
           +- 001/                     <-- Minimal Terraform project
@@ -46,6 +49,7 @@ Docker starter project for Google Cloud ["GC"].
           +- 002/                     <-- Compute instance with static IP project
           +- 003/                     <-- Compute instance with HTTP, SSH project
           +- 004/                     <-- Compute instance with startup script project
+          +- 005/                     <-- Autoscaler and load balancer project
 
 ---
 ## Installation
