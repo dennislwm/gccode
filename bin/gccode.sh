@@ -1,0 +1,1 @@
+alias sshgc='ssh -F ~/.ssh/config -i ~/.ssh/id_rsa_gc01 gc01@'

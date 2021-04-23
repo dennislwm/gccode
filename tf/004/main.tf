@@ -6,17 +6,17 @@ provider "google" {
 }
 terraform {
   backend "gcs" {
-    bucket      = "bu-gccode-01"
+    bucket      = "bu-gccode-004"
     prefix      = "tf"
     credentials = "../../config/sa-gccode-key.json"
   }
 }
 
 resource "google_compute_network" "objVpcNetwork" {
-  name  = "vn-gccode"
+  name  = "vn-gccode-004"
 }
 resource "google_compute_instance" "objComputeInstance" {
-  name                    = "co-gccode-01"
+  name                    = "co-gccode-004"
   machine_type            = var.strMachineType
   tags                    = ["tg-public"]
   zone                    = var.strZone
@@ -34,10 +34,10 @@ resource "google_compute_instance" "objComputeInstance" {
   }
 }
 resource "google_compute_address" "objComputeIp" {
-  name = "ip-gccode-01"
+  name = "ip-gccode-004"
 }
 resource "google_compute_firewall" "objComputeFirewall" {
-  name    = "fw-gccode-public"
+  name    = "fw-gccode-004-public"
   network = google_compute_network.objVpcNetwork.name
   allow {
     protocol  = "icmp"
